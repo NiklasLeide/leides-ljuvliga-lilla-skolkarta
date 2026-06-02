@@ -30,11 +30,9 @@ jobs:
       - name: Installera beroenden
         run: npm ci
 
-      # Aktiverar Pages för repot om det inte redan är på (första körningen).
+      # Pages måste vara aktiverat i repo-inställningarna med källa "GitHub Actions".
       - name: Konfigurera Pages
         uses: actions/configure-pages@v5
-        with:
-          enablement: true
 
       - name: Bygg
         env:
