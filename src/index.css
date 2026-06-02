@@ -1,0 +1,358 @@
+:root {
+  --bla: #2563eb;
+  --rosa: #db2777;
+  --text: #1e293b;
+  --mjuk: #64748b;
+  --linje: #e2e8f0;
+  --yta: #ffffff;
+  --bak: #f1f5f9;
+  --skugga: 0 2px 12px rgba(15, 23, 42, 0.08);
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  color: var(--text);
+  background: var(--bak);
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Topbar */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.85rem 1.25rem;
+  background: var(--yta);
+  border-bottom: 1px solid var(--linje);
+  z-index: 1000;
+}
+
+.topbar__titel h1 {
+  margin: 0;
+  font-size: 1.25rem;
+  letter-spacing: -0.01em;
+}
+
+.topbar__titel p {
+  margin: 0.15rem 0 0;
+  font-size: 0.85rem;
+  color: var(--mjuk);
+  max-width: 60ch;
+}
+
+.topbar__status {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  background: var(--bak);
+  color: var(--mjuk);
+  white-space: nowrap;
+}
+
+.pill--kalla[data-kalla='live'] {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.pill--kalla[data-kalla='snapshot'] {
+  background: #fef9c3;
+  color: #a16207;
+}
+
+/* Innehåll: karta + panel */
+.innehall {
+  position: relative;
+  flex: 1;
+  display: flex;
+  min-height: 0;
+}
+
+.kartruta {
+  position: relative;
+  flex: 1;
+  min-width: 0;
+}
+
+.karta {
+  height: 100%;
+  width: 100%;
+}
+
+.centrerat {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  color: var(--mjuk);
+}
+
+/* Legend */
+.legend {
+  position: absolute;
+  bottom: 1rem;
+  left: 1rem;
+  z-index: 1000;
+  background: var(--yta);
+  border: 1px solid var(--linje);
+  border-radius: 10px;
+  box-shadow: var(--skugga);
+  padding: 0.55rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+}
+
+.legend span {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.legend__prick {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 0 0 1px var(--linje);
+}
+
+/* Panel */
+.panel {
+  position: relative;
+  width: 380px;
+  flex-shrink: 0;
+  background: var(--yta);
+  border-left: 1px solid var(--linje);
+  box-shadow: var(--skugga);
+  padding: 1.25rem;
+  overflow-y: auto;
+  z-index: 1100;
+}
+
+.panel__stang {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  border: none;
+  background: var(--bak);
+  color: var(--mjuk);
+  width: 30px;
+  height: 30px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.panel__stang:hover {
+  background: #e2e8f0;
+}
+
+.panel__head {
+  padding-right: 2rem;
+}
+
+.panel__head h2 {
+  margin: 0.1rem 0 0;
+  font-size: 1.15rem;
+  line-height: 1.25;
+}
+
+.panel__prick {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.panel__meta {
+  margin: 0.3rem 0 0;
+  font-size: 0.82rem;
+  color: var(--mjuk);
+  text-transform: capitalize;
+}
+
+.panel__adress {
+  margin: 0.85rem 0 0;
+  font-size: 0.88rem;
+}
+
+.panel__kontakt {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 0.6rem;
+  font-size: 0.85rem;
+}
+
+.panel__kontakt a {
+  color: var(--bla);
+  text-decoration: none;
+}
+
+.panel__kontakt a:hover {
+  text-decoration: underline;
+}
+
+.panel__sektion {
+  margin-top: 1.5rem;
+  border-top: 1px solid var(--linje);
+  padding-top: 1.1rem;
+}
+
+.panel__sektion h3 {
+  margin: 0 0 0.6rem;
+  font-size: 0.95rem;
+}
+
+.panel__info {
+  margin: 0;
+  font-size: 0.82rem;
+  color: var(--mjuk);
+}
+
+/* Programlista */
+.program {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.program__rad {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  background: var(--bak);
+  border-radius: 8px;
+  padding: 0.55rem 0.7rem;
+  font-size: 0.85rem;
+}
+
+.program__namn {
+  font-weight: 500;
+}
+
+.program__typ {
+  flex-shrink: 0;
+  font-size: 0.68rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.18rem 0.45rem;
+  border-radius: 999px;
+  background: #e0e7ff;
+  color: #4338ca;
+}
+
+.program__typ[data-typ='Yrkesprogram'] {
+  background: #fce7f3;
+  color: #be185d;
+}
+
+.program__typ[data-typ='Introduktionsprogram'] {
+  background: #f1f5f9;
+  color: #475569;
+}
+
+/* Knappar */
+.panel__lankar {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.knapp {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.6rem 0.75rem;
+  border-radius: 9px;
+  border: 1px solid var(--linje);
+  color: var(--text);
+  background: var(--yta);
+}
+
+.knapp:hover {
+  background: var(--bak);
+}
+
+.knapp--primar {
+  background: var(--bla);
+  border-color: var(--bla);
+  color: #fff;
+}
+
+.knapp--primar:hover {
+  background: #1d4ed8;
+}
+
+.panel__fot {
+  margin-top: 1.5rem;
+  font-size: 0.72rem;
+  color: var(--mjuk);
+}
+
+/* Sidfot */
+.sidfot {
+  padding: 0.6rem 1.25rem;
+  font-size: 0.75rem;
+  color: var(--mjuk);
+  background: var(--yta);
+  border-top: 1px solid var(--linje);
+}
+
+.sidfot a {
+  color: var(--bla);
+}
+
+/* Responsivt: panelen blir ett underliggande blad på små skärmar */
+@media (max-width: 720px) {
+  .topbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .innehall {
+    flex-direction: column;
+  }
+
+  .panel {
+    position: absolute;
+    inset: auto 0 0 0;
+    width: 100%;
+    max-height: 65%;
+    border-left: none;
+    border-top: 1px solid var(--linje);
+    border-radius: 16px 16px 0 0;
+  }
+}

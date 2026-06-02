@@ -1,0 +1,58 @@
+name: Deploy till GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+# Behörigheter som krävs för att deploya till GitHub Pages.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Tillåt bara en samtidig deploy; avbryt inte pågående produktion.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Installera beroenden
+        run: npm ci
+
+      # Aktiverar Pages för repot om det inte redan är på (första körningen).
+      - name: Konfigurera Pages
+        uses: actions/configure-pages@v5
+        with:
+          enablement: true
+
+      - name: Bygg
+        env:
+          GITHUB_PAGES: '1'
+        run: npm run build
+
+      - name: Ladda upp artefakt
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploya till GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

@@ -1,0 +1,553 @@
+{
+  "uppdaterad": "2026-06-02T17:24:55.398Z",
+  "kalla": "Skolverkets öppna API (Planned educations v3)",
+  "antal": 21,
+  "skolor": [
+    {
+      "kod": "30530571",
+      "namn": "af Chapmangymnasiet",
+      "kommunkod": "1080",
+      "kommun": "Karlskrona",
+      "huvudman": "Kommunal",
+      "organisation": "KARLSKRONA KOMMUN",
+      "lat": 56.16408919132174,
+      "lng": 15.591470088135923,
+      "adress": {
+        "gata": "Drottninggatan 49",
+        "postnr": "37132",
+        "ort": "Karlskrona"
+      },
+      "epost": "kunskapsforvaltningen@karlskrona.se",
+      "telefon": "0455-304093",
+      "webb": "http://www.karlskrona.se/afchapman",
+      "program": [
+        "BF25",
+        "EK25",
+        "FS25",
+        "HT25",
+        "HV25",
+        "IMV",
+        "IN25",
+        "RL25",
+        "SA25",
+        "VO25"
+      ]
+    },
+    {
+      "kod": "78839208",
+      "namn": "Aspero Idrottsgymn. Karlskrona",
+      "kommunkod": "1080",
+      "kommun": "Karlskrona",
+      "huvudman": "Fristående",
+      "organisation": "ASPERO FRISKOLOR AB",
+      "lat": 56.16352006661932,
+      "lng": 15.584561512402901,
+      "adress": {
+        "gata": "Landbrogatan 13",
+        "postnr": "37134",
+        "ort": "Karlskrona"
+      },
+      "epost": "malin.nermark@aspero.nu",
+      "telefon": "0455-355192",
+      "webb": "http://www.aspero.nu",
+      "program": [
+        "EK25",
+        "SA25"
+      ]
+    },
+    {
+      "kod": "86896907",
+      "namn": "Blekinge Naturbruksgymnasium",
+      "kommunkod": "1081",
+      "kommun": "Ronneby",
+      "huvudman": "Kommunal",
+      "organisation": "RONNEBY KOMMUN",
+      "lat": 56.22283576893737,
+      "lng": 15.124257232803261,
+      "adress": {
+        "gata": "Gamla Riksvägen 61",
+        "postnr": "37262",
+        "ort": "Bräkne-Hoby"
+      },
+      "epost": "kontakt@ronneby.se",
+      "telefon": "0457-617440",
+      "webb": "http://www.ronneby.se/naturbruksgymnasiet",
+      "program": [
+        "IMV",
+        "NB25"
+      ]
+    },
+    {
+      "kod": "96024712",
+      "namn": "Ehrensvärdska gymnasiet",
+      "kommunkod": "1080",
+      "kommun": "Karlskrona",
+      "huvudman": "Kommunal",
+      "organisation": "KARLSKRONA KOMMUN",
+      "lat": 56.1642346430657,
+      "lng": 15.58923406377406,
+      "adress": {
+        "gata": "Östra Köpmansgatan 26",
+        "postnr": "37030",
+        "ort": "Karlskrona"
+      },
+      "epost": "kunskapsforvaltningen@karlskrona.se",
+      "telefon": "0455-304284",
+      "webb": "http://www.karlskrona.se/ehrensvardska",
+      "program": [
+        "BF25",
+        "FR25",
+        "HV25",
+        "IBIB0",
+        "IMV",
+        "NA25",
+        "TE25",
+        "VO25"
+      ]
+    },
+    {
+      "kod": "36845597",
+      "namn": "Fischerströmska gymnasiet",
+      "kommunkod": "1080",
+      "kommun": "Karlskrona",
+      "huvudman": "Kommunal",
+      "organisation": "KARLSKRONA KOMMUN",
+      "lat": 56.163937729264354,
+      "lng": 15.59307800702478,
+      "adress": {
+        "gata": "Östra Köpmansgatan 10",
+        "postnr": "37155",
+        "ort": "Karlskrona"
+      },
+      "epost": "Kunskapsforvaltningen@karlskrona.se",
+      "telefon": "0455-321382",
+      "webb": "http://www.karlskrona.se/fischerstromska",
+      "program": [
+        "IMA",
+        "IMS",
+        "IMY"
+      ]
+    },
+    {
+      "kod": "42573391",
+      "namn": "Fria Läroverken i Karlshamn",
+      "kommunkod": "1082",
+      "kommun": "Karlshamn",
+      "huvudman": "Fristående",
+      "organisation": "Gymnasieskolor i Syd AB",
+      "lat": 56.174211135734296,
+      "lng": 14.860845166854391,
+      "adress": {
+        "gata": "Kungsgatan 61",
+        "postnr": "37438",
+        "ort": "Karlshamn"
+      },
+      "epost": "karlshamn@laroverken.se",
+      "telefon": "073-241776",
+      "webb": "http://www.laroverken.se/karlshamn",
+      "program": [
+        "EE25",
+        "EK25",
+        "FR25",
+        "FS25",
+        "HV25",
+        "IMV",
+        "SA25"
+      ]
+    },
+    {
+      "kod": "29324709",
+      "namn": "Furubygg",
+      "kommunkod": "1083",
+      "kommun": "Sölvesborg",
+      "huvudman": "Kommunal",
+      "organisation": "SÖLVESBORGS KOMMUN",
+      "lat": 56.06660435678422,
+      "lng": 14.483008354804987,
+      "adress": {
+        "gata": "Industrigatan 15",
+        "postnr": "29539",
+        "ort": "Bromölla"
+      },
+      "epost": "furulund.expedition@solvesborg.se",
+      "telefon": "0456-816660",
+      "webb": "https://furulundsgymnasiet.se",
+      "program": [
+        "BA25",
+        "IMV",
+        "IMY"
+      ]
+    },
+    {
+      "kod": "23476801",
+      "namn": "Furulundsgymnasiet 1",
+      "kommunkod": "1083",
+      "kommun": "Sölvesborg",
+      "huvudman": "Kommunal",
+      "organisation": "SÖLVESBORGS KOMMUN",
+      "lat": 56.05549399626997,
+      "lng": 14.581266053638677,
+      "adress": {
+        "gata": "Yndevägen 2",
+        "postnr": "29433",
+        "ort": "Sölvesborg"
+      },
+      "epost": "furulund.expedition@solvesborg.se",
+      "telefon": "0456-816660",
+      "webb": "https://furulundsgymnasiet.se",
+      "program": [
+        "EE25",
+        "IMA",
+        "IMS",
+        "IMV",
+        "IMY",
+        "IN25",
+        "NA25",
+        "SA25",
+        "TE25",
+        "VO25"
+      ]
+    },
+    {
+      "kod": "86351879",
+      "namn": "Furulundsgymnasiet 2",
+      "kommunkod": "1083",
+      "kommun": "Sölvesborg",
+      "huvudman": "Kommunal",
+      "organisation": "SÖLVESBORGS KOMMUN",
+      "lat": 56.05238779268146,
+      "lng": 14.568968849909282,
+      "adress": {
+        "gata": "Yndevägen 2",
+        "postnr": "29433",
+        "ort": "Sölvesborg"
+      },
+      "epost": "furulund.expedition@solvesborg.se",
+      "telefon": "0456-816660",
+      "webb": "https://furulundsgymnasiet.se",
+      "program": [
+        "BA25",
+        "BF25",
+        "EE25",
+        "EK25",
+        "IMV",
+        "IMY",
+        "IN25",
+        "SA25",
+        "VO25"
+      ]
+    },
+    {
+      "kod": "40338843",
+      "namn": "Gymnasieskolan Knut Hahn 1",
+      "kommunkod": "1081",
+      "kommun": "Ronneby",
+      "huvudman": "Kommunal",
+      "organisation": "RONNEBY KOMMUN",
+      "lat": 56.20281330382465,
+      "lng": 15.272740233880262,
+      "adress": {
+        "gata": "Blasius Königsgatan 27",
+        "postnr": "37235",
+        "ort": "Ronneby"
+      },
+      "epost": "kontakt@ronneby.se",
+      "telefon": "0457-618960",
+      "webb": "http://www.ronneby.se/knuthahnsskolan",
+      "program": [
+        "BF25",
+        "EK25",
+        "ES25",
+        "FS25",
+        "IMA",
+        "IMV",
+        "SA25",
+        "TE25"
+      ]
+    },
+    {
+      "kod": "77440824",
+      "namn": "Gymnasieskolan Knut Hahn 2",
+      "kommunkod": "1081",
+      "kommun": "Ronneby",
+      "huvudman": "Kommunal",
+      "organisation": "RONNEBY KOMMUN",
+      "lat": 56.20281330382465,
+      "lng": 15.272740233880262,
+      "adress": {
+        "gata": "Blasius Königsgatan 27",
+        "postnr": "37235",
+        "ort": "Ronneby"
+      },
+      "epost": "kontakt@ronneby.se",
+      "telefon": "0457-618960",
+      "webb": "http://www.ronneby.se/knuthahnsskolan",
+      "program": [
+        "BA25",
+        "EE25",
+        "IMV",
+        "IN25",
+        "NA25",
+        "TE25"
+      ]
+    },
+    {
+      "kod": "13883567",
+      "namn": "Gymnasieskolan Knut Hahn 3",
+      "kommunkod": "1081",
+      "kommun": "Ronneby",
+      "huvudman": "Kommunal",
+      "organisation": "RONNEBY KOMMUN",
+      "lat": 56.20281330382465,
+      "lng": 15.272740233880262,
+      "adress": {
+        "gata": "Blasius Königsgatan 27",
+        "postnr": "37235",
+        "ort": "Ronneby"
+      },
+      "epost": "kontakt@ronneby.se",
+      "telefon": "0457-618960",
+      "webb": "http://www.ronneby.se/knuthahnsskolan",
+      "program": [
+        "BF25",
+        "ES25",
+        "IMA"
+      ]
+    },
+    {
+      "kod": "71069359",
+      "namn": "Gymnasieskolan Knut Hahn 4",
+      "kommunkod": "1081",
+      "kommun": "Ronneby",
+      "huvudman": "Kommunal",
+      "organisation": "RONNEBY KOMMUN",
+      "lat": 56.20281330382465,
+      "lng": 15.272740233880262,
+      "adress": {
+        "gata": "Blasius Königsgatan 27",
+        "postnr": "37235",
+        "ort": "Ronneby"
+      },
+      "epost": "kontakt@ronneby.se",
+      "telefon": "0457-618960",
+      "webb": "http://www.ronneby.se/knuthahnsskolan",
+      "program": [
+        "FL25"
+      ]
+    },
+    {
+      "kod": "15763669",
+      "namn": "Klaragymnasiet med internat",
+      "kommunkod": "1060",
+      "kommun": "Olofström",
+      "huvudman": "Kommunalförbund",
+      "organisation": "KOMMUNSAMVERKAN CURA INDIVIDUTVECKLING",
+      "lat": 56.27311544754394,
+      "lng": 14.536099049611916,
+      "adress": {
+        "gata": "Rydénvägen 1, Nordenbergskolan",
+        "postnr": "29333",
+        "ort": "Olofström"
+      },
+      "epost": "klaragymnasiet@curaindivid.se",
+      "telefon": "070-8454715",
+      "webb": "http://www.curaindivid.se",
+      "program": [
+        "ES25",
+        "FS25",
+        "IMA",
+        "IMV",
+        "SA25"
+      ]
+    },
+    {
+      "kod": "59655752",
+      "namn": "Nordenbergsskolan 1",
+      "kommunkod": "1060",
+      "kommun": "Olofström",
+      "huvudman": "Kommunal",
+      "organisation": "OLOFSTRÖMS KOMMUN",
+      "lat": 56.27325562234297,
+      "lng": 14.535144607094843,
+      "adress": {
+        "gata": "Rydénvägen 1",
+        "postnr": "29333",
+        "ort": "Olofström"
+      },
+      "epost": "carolina.augustsson@olofstrom.se",
+      "telefon": "0454-93244",
+      "webb": "http://www.olofstrom.se/nordenberg",
+      "program": [
+        "EE25",
+        "FT25",
+        "IMA",
+        "IMS",
+        "IMV",
+        "IMY",
+        "IN25",
+        "NA25",
+        "TE25"
+      ]
+    },
+    {
+      "kod": "88750078",
+      "namn": "Nordenbergsskolan 2",
+      "kommunkod": "1060",
+      "kommun": "Olofström",
+      "huvudman": "Kommunal",
+      "organisation": "OLOFSTRÖMS KOMMUN",
+      "lat": 56.27325562234297,
+      "lng": 14.535144607094843,
+      "adress": {
+        "gata": "Rydénvägen 1",
+        "postnr": "29333",
+        "ort": "Olofström"
+      },
+      "epost": "carolina.augustsson@olofstrom.se",
+      "telefon": "0454-93244",
+      "webb": "http://www.olofstrom.se/nordenberg",
+      "program": [
+        "BF25",
+        "EK25",
+        "FS25",
+        "IMV",
+        "IMY",
+        "SA25"
+      ]
+    },
+    {
+      "kod": "85800840",
+      "namn": "Törnströmska gymnasiet",
+      "kommunkod": "1080",
+      "kommun": "Karlskrona",
+      "huvudman": "Kommunal",
+      "organisation": "KARLSKRONA KOMMUN",
+      "lat": 56.163937729264354,
+      "lng": 15.59307800702478,
+      "adress": {
+        "gata": "Östra Köpmansgatan 10",
+        "postnr": "37160",
+        "ort": "Karlskrona"
+      },
+      "epost": "kunskapsforvaltningen@karlskrona.se",
+      "telefon": "0455-304003",
+      "webb": "http://www.karlskrona.se/tornstromska",
+      "program": [
+        "BA25",
+        "EE25",
+        "ES25",
+        "FS25",
+        "FT25",
+        "IMV",
+        "SJ25",
+        "VF25"
+      ]
+    },
+    {
+      "kod": "21673083",
+      "namn": "Vägga gymnasieskola 1b",
+      "kommunkod": "1082",
+      "kommun": "Karlshamn",
+      "huvudman": "Kommunal",
+      "organisation": "KARLSHAMNS KOMMUN",
+      "lat": 56.16458758757354,
+      "lng": 14.875174072040217,
+      "adress": {
+        "gata": "Väggavägen 2",
+        "postnr": "37430",
+        "ort": "Karlshamn"
+      },
+      "epost": "vaggaskolan@utb.karlshamn.se",
+      "telefon": "0454-81501",
+      "webb": "http://www.karlshamn.se",
+      "program": [
+        "EE25",
+        "IMA",
+        "IMS",
+        "IMY"
+      ]
+    },
+    {
+      "kod": "64574972",
+      "namn": "Vägga gymnasieskola 2",
+      "kommunkod": "1082",
+      "kommun": "Karlshamn",
+      "huvudman": "Kommunal",
+      "organisation": "KARLSHAMNS KOMMUN",
+      "lat": 56.16458758757354,
+      "lng": 14.875174072040217,
+      "adress": {
+        "gata": "Väggavägen 2",
+        "postnr": "37430",
+        "ort": "Karlshamn"
+      },
+      "epost": "vaggaskolan@utb.karlshamn.se",
+      "telefon": "0454-81501",
+      "webb": "http://www.karlshamn.se",
+      "program": [
+        "BF25",
+        "ES25",
+        "IMV",
+        "SA25",
+        "TE25",
+        "VO25"
+      ]
+    },
+    {
+      "kod": "19741742",
+      "namn": "Vägga gymnasieskola 3",
+      "kommunkod": "1082",
+      "kommun": "Karlshamn",
+      "huvudman": "Kommunal",
+      "organisation": "KARLSHAMNS KOMMUN",
+      "lat": 56.16458758757354,
+      "lng": 14.875174072040217,
+      "adress": {
+        "gata": "Väggavägen 2",
+        "postnr": "37430",
+        "ort": "Karlshamn"
+      },
+      "epost": "vaggaskolan@utb.karlshamn.se",
+      "telefon": "0454-81501",
+      "webb": "http://www.karlshamn.se",
+      "program": [
+        "BA25",
+        "BF25",
+        "EK25",
+        "HT25",
+        "IMV",
+        "NA25",
+        "RL25",
+        "SA25",
+        "TE25",
+        "VF25"
+      ]
+    },
+    {
+      "kod": "29032715",
+      "namn": "Vägga gymnasieskola 4",
+      "kommunkod": "1082",
+      "kommun": "Karlshamn",
+      "huvudman": "Kommunal",
+      "organisation": "KARLSHAMNS KOMMUN",
+      "lat": 56.16458758757354,
+      "lng": 14.875174072040217,
+      "adress": {
+        "gata": "Väggavägen 2",
+        "postnr": "37430",
+        "ort": "Karlshamn"
+      },
+      "epost": "vaggaskolan@utb.karlshamn.se",
+      "telefon": "0454-81501",
+      "webb": "http://www.karlshamn.se",
+      "program": [
+        "EE25",
+        "FT25",
+        "IMV",
+        "NA25",
+        "SA25",
+        "TE25"
+      ]
+    }
+  ]
+}
