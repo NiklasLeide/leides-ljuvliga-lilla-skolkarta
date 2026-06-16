@@ -3,6 +3,7 @@ import {
   BLEKINGE_KOMMUNER,
   listaGymnasieskolor,
   hamtaSkoldetaljer,
+  hamtaStatistik,
 } from './skolverket.js';
 
 // Bas-URL för statiska filer (respekterar Vite:s `base` på GitHub Pages).
@@ -25,8 +26,13 @@ export function useGymnasieskolor() {
       const grund = listor.flat();
       const detaljerade = await Promise.all(
         grund.map(async (s) => {
-          const d = await hamtaSkoldetaljer(s.kod);
-          return d ? { ...d, huvudman: s.huvudman, program: null } : null;
+          const [d, stat] = await Promise.all([
+            hamtaSkoldetaljer(s.kod),
+            hamtaStatistik(s.kod),
+          ]);
+          return d
+            ? { ...d, huvudman: s.huvudman, program: stat.program, metrics: stat.metrics }
+            : null;
         })
       );
       return detaljerade

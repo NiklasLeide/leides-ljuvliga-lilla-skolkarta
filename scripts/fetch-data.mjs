@@ -12,7 +12,7 @@ import {
   BLEKINGE_KOMMUNER,
   listaGymnasieskolor,
   hamtaSkoldetaljer,
-  hamtaProgram,
+  hamtaStatistik,
 } from '../src/lib/skolverket.js';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
@@ -32,12 +32,12 @@ async function main() {
   const skolor = [];
   for (const s of grund) {
     const detaljer = await hamtaSkoldetaljer(s.kod);
-    const program = await hamtaProgram(s.kod);
+    const { program, metrics } = await hamtaStatistik(s.kod);
     if (!detaljer || detaljer.lat == null || detaljer.lng == null) {
       console.warn(`  ⚠ Saknar koordinater, hoppar över: ${s.namn} (${s.kod})`);
       continue;
     }
-    skolor.push({ ...detaljer, huvudman: s.huvudman, program });
+    skolor.push({ ...detaljer, huvudman: s.huvudman, program, metrics });
     console.log(`  ✓ ${detaljer.namn} – ${program.length} program`);
   }
 

@@ -83,6 +83,42 @@ body {
   color: #a16207;
 }
 
+/* Kontrollrad */
+.kontroller {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: 0.6rem 1.25rem;
+  background: var(--yta);
+  border-bottom: 1px solid var(--linje);
+  z-index: 900;
+}
+
+.kontroll {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--mjuk);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.kontroll select {
+  font: inherit;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--text);
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--linje);
+  border-radius: 8px;
+  background: var(--yta);
+  min-width: 220px;
+}
+
 /* Innehåll: karta + panel */
 .innehall {
   position: relative;
@@ -333,6 +369,294 @@ body {
 
 .sidfot a {
   color: var(--bla);
+}
+
+/* Legend – gradientläge */
+.legend strong {
+  font-size: 0.8rem;
+}
+
+.legend__skala {
+  height: 10px;
+  width: 180px;
+  border-radius: 5px;
+  margin-top: 0.15rem;
+}
+
+.legend__ändar {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.72rem;
+  color: var(--mjuk);
+}
+
+.legend__not {
+  font-size: 0.68rem;
+  color: var(--mjuk);
+  font-style: italic;
+}
+
+/* Topplista */
+.topp {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.topp__rad {
+  display: grid;
+  grid-template-columns: 1.5rem 1fr auto 1.6rem;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.topp__plats {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--mjuk);
+  text-align: right;
+}
+
+.topp__knapp {
+  border: none;
+  background: none;
+  padding: 0.35rem 0;
+  cursor: pointer;
+  text-align: left;
+  min-width: 0;
+}
+
+.topp__namn {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.85rem;
+  color: var(--text);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.topp__prick {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.topp__stapel {
+  display: block;
+  height: 5px;
+  background: var(--bak);
+  border-radius: 3px;
+  margin-top: 0.25rem;
+}
+
+.topp__stapel i {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+  background: var(--bla);
+}
+
+.topp__varde {
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.topp__jmf {
+  width: 1.5rem;
+  height: 1.5rem;
+  border: 1px solid var(--linje);
+  border-radius: 7px;
+  background: var(--yta);
+  color: var(--mjuk);
+  cursor: pointer;
+  font-size: 0.85rem;
+  line-height: 1;
+}
+
+.topp__jmf--på {
+  background: var(--bla);
+  border-color: var(--bla);
+  color: #fff;
+}
+
+/* Nyckeltal i skolpanelen */
+.nyckeltal {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.nyckeltal__rad {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  font-size: 0.85rem;
+  border-bottom: 1px dotted var(--linje);
+  padding-bottom: 0.3rem;
+}
+
+.nyckeltal__rad dt {
+  color: var(--mjuk);
+}
+
+.nyckeltal__rad dd {
+  margin: 0;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.panel__jmf {
+  width: 100%;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+/* Jämförelse-fält */
+.jmfbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 1.25rem;
+  background: #0f172a;
+  color: #fff;
+  font-size: 0.85rem;
+}
+
+.jmfbar__knappar {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.jmfbar button {
+  font: inherit;
+  font-weight: 600;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.jmfbar button.knapp--primar {
+  background: var(--bla);
+  border-color: var(--bla);
+}
+
+.jmfbar button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* Jämförelse-överlägg */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.5);
+  display: grid;
+  place-items: center;
+  z-index: 2000;
+  padding: 1rem;
+}
+
+.jmf {
+  background: var(--yta);
+  border-radius: 14px;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.3);
+  width: min(560px, 100%);
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 1.25rem 1.5rem 1.5rem;
+}
+
+.jmf__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.jmf__head h2 {
+  margin: 0;
+  font-size: 1.15rem;
+}
+
+.jmf__legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.75rem 0 0.5rem;
+}
+
+.jmf__chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  background: var(--bak);
+  border-radius: 999px;
+  padding: 0.25rem 0.6rem;
+}
+
+.jmf__chip i {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.jmf__chip button {
+  border: none;
+  background: none;
+  color: var(--mjuk);
+  cursor: pointer;
+  font-size: 0.75rem;
+  padding: 0;
+}
+
+.jmf__metrik {
+  margin-top: 1rem;
+}
+
+.jmf__metrik h3 {
+  margin: 0 0 0.4rem;
+  font-size: 0.9rem;
+}
+
+.jmf__stapelrad {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.3rem;
+}
+
+.jmf__stapel {
+  flex: 1;
+  height: 14px;
+  background: var(--bak);
+  border-radius: 7px;
+  overflow: hidden;
+}
+
+.jmf__stapel i {
+  display: block;
+  height: 100%;
+  border-radius: 7px;
+}
+
+.jmf__varde {
+  width: 4.5rem;
+  text-align: right;
+  font-size: 0.8rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
 }
 
 /* Responsivt: panelen blir ett underliggande blad på små skärmar */

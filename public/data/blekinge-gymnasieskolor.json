@@ -1,5 +1,5 @@
 {
-  "uppdaterad": "2026-06-02T17:24:55.398Z",
+  "uppdaterad": "2026-06-16T12:08:55.103Z",
   "kalla": "Skolverkets öppna API (Planned educations v3)",
   "antal": 21,
   "skolor": [
@@ -31,7 +31,14 @@
         "RL25",
         "SA25",
         "VO25"
-      ]
+      ],
+      "metrics": {
+        "antalElever": 800,
+        "larartathet": 15,
+        "behorigaLarare": 93.2,
+        "andelBehoriga": 93.68709677419355,
+        "harBibliotek": false
+      }
     },
     {
       "kod": "78839208",
@@ -53,7 +60,14 @@
       "program": [
         "EK25",
         "SA25"
-      ]
+      ],
+      "metrics": {
+        "antalElever": 260,
+        "larartathet": 18.3,
+        "behorigaLarare": 69.6,
+        "andelBehoriga": 100,
+        "harBibliotek": false
+      }
     },
     {
       "kod": "86896907",
@@ -75,7 +89,14 @@
       "program": [
         "IMV",
         "NB25"
-      ]
+      ],
+      "metrics": {
+        "antalElever": 110,
+        "larartathet": 6.8,
+        "behorigaLarare": 59,
+        "andelBehoriga": 31.4,
+        "harBibliotek": false
+      }
     },
     {
       "kod": "96024712",
@@ -103,7 +124,14 @@
         "NA25",
         "TE25",
         "VO25"
-      ]
+      ],
+      "metrics": {
+        "antalElever": 600,
+        "larartathet": 13.2,
+        "behorigaLarare": 87.2,
+        "andelBehoriga": 81.86086956521739,
+        "harBibliotek": false
+      }
     },
     {
       "kod": "36845597",
@@ -126,7 +154,14 @@
         "IMA",
         "IMS",
         "IMY"
-      ]
+      ],
+      "metrics": {
+        "antalElever": 150,
+        "larartathet": null,
+        "behorigaLarare": null,
+        "andelBehoriga": null,
+        "harBibliotek": false
+      }
     },
     {
       "kod": "42573391",
@@ -153,7 +188,14 @@
         "HV25",
         "IMV",
         "SA25"
-      ]
+      ],
+      "metrics": {
+        "antalElever": 120,
+        "larartathet": 10.3,
+        "behorigaLarare": 49.4,
+        "andelBehoriga": 100,
+        "harBibliotek": false
+      }
     },
     {
       "kod": "29324709",
@@ -176,7 +218,14 @@
         "BA25",
         "IMV",
         "IMY"
-      ]
+      ],
+      "metrics": {
+        "antalElever": 60,
+        "larartathet": 11.4,
+        "behorigaLarare": null,
+        "andelBehoriga": null,
+        "harBibliotek": false
+      }
     },
     {
       "kod": "23476801",
@@ -206,7 +255,14 @@
         "SA25",
         "TE25",
         "VO25"
-      ]
+      ],
+      "metrics": {
+        "antalElever": 230,
+        "larartathet": 11.2,
+        "behorigaLarare": 72.6,
+        "andelBehoriga": 96.72222222222223,
+        "harBibliotek": false
+      }
     },
     {
       "kod": "86351879",
@@ -235,7 +291,14 @@
         "IN25",
         "SA25",
         "VO25"
-      ]
+      ],
+      "metrics": {
+        "antalElever": 340,
+        "larartathet": 13.8,
+        "behorigaLarare": 91.1,
+        "andelBehoriga": 89.85666666666667,
+        "harBibliotek": false
+      }
     },
     {
       "kod": "40338843",
@@ -263,7 +326,14 @@
         "IMV",
         "SA25",
         "TE25"
-      ]
+      ],
+      "metrics": {
+        "antalElever": 460,
+        "larartathet": 13.3,
+        "behorigaLarare": 90.2,
+        "andelBehoriga": 79.91612903225807,
+        "harBibliotek": false
+      }
     },
     {
       "kod": "77440824",
@@ -289,7 +359,14 @@
         "IN25",
         "NA25",
         "TE25"
-      ]
+      ],
+      "metrics": {
+        "antalElever": 290,
+        "larartathet": 11.1,
+        "behorigaLarare": 92.5,
+        "andelBehoriga": 87.05,
+        "harBibliotek": false
+      }
     },
     {
       "kod": "13883567",
@@ -312,7 +389,14 @@
         "BF25",
         "ES25",
         "IMA"
-      ]
+      ],
+      "metrics": {
+        "antalElever": 150,
+        "larartathet": null,
+        "behorigaLarare": null,
+        "andelBehoriga": null,
+        "harBibliotek": false
+      }
     },
     {
       "kod": "71069359",
@@ -333,7 +417,14 @@
       "webb": "http://www.ronneby.se/knuthahnsskolan",
       "program": [
         "FL25"
-      ]
+      ],
+      "metrics": {
+        "antalElever": 60,
+        "larartathet": 10,
+        "behorigaLarare": null,
+        "andelBehoriga": 100,
+        "harBibliotek": false
+      }
     },
     {
       "kod": "15763669",
@@ -350,7 +441,7 @@
         "ort": "Olofström"
       },
       "epost": "klaragymnasiet@curaindivid.se",
-      "telefon": "070-8454715",
+      "telefon": "0766-310743",
       "webb": "http://www.curaindivid.se",
       "program": [
         "ES25",
@@ -358,11 +449,18 @@
         "IMA",
         "IMV",
         "SA25"
-      ]
+      ],
+      "metrics": {
+        "antalElever": 70,
+        "larartathet": 3.3,
+        "behorigaLarare": 81.7,
+        "andelBehoriga": null,
+        "harBibliotek": false
+      }
     },
     {
       "kod": "59655752",
-      "namn": "Nordenbergsskolan 1",
+      "namn": "Nordenbergs gymnasium 1",
       "kommunkod": "1060",
       "kommun": "Olofström",
       "huvudman": "Kommunal",
@@ -387,11 +485,18 @@
         "IN25",
         "NA25",
         "TE25"
-      ]
+      ],
+      "metrics": {
+        "antalElever": 290,
+        "larartathet": 8,
+        "behorigaLarare": 74.9,
+        "andelBehoriga": 82.5111111111111,
+        "harBibliotek": false
+      }
     },
     {
       "kod": "88750078",
-      "namn": "Nordenbergsskolan 2",
+      "namn": "Nordenbergs gymnasium 2",
       "kommunkod": "1060",
       "kommun": "Olofström",
       "huvudman": "Kommunal",
@@ -413,7 +518,14 @@
         "IMV",
         "IMY",
         "SA25"
-      ]
+      ],
+      "metrics": {
+        "antalElever": 200,
+        "larartathet": 9,
+        "behorigaLarare": 81.9,
+        "andelBehoriga": 96.73333333333333,
+        "harBibliotek": false
+      }
     },
     {
       "kod": "85800840",
@@ -441,7 +553,14 @@
         "IMV",
         "SJ25",
         "VF25"
-      ]
+      ],
+      "metrics": {
+        "antalElever": 570,
+        "larartathet": 9.1,
+        "behorigaLarare": 93.9,
+        "andelBehoriga": 58.51219512195122,
+        "harBibliotek": false
+      }
     },
     {
       "kod": "21673083",
@@ -465,7 +584,14 @@
         "IMA",
         "IMS",
         "IMY"
-      ]
+      ],
+      "metrics": {
+        "antalElever": 90,
+        "larartathet": null,
+        "behorigaLarare": null,
+        "andelBehoriga": null,
+        "harBibliotek": false
+      }
     },
     {
       "kod": "64574972",
@@ -491,7 +617,14 @@
         "SA25",
         "TE25",
         "VO25"
-      ]
+      ],
+      "metrics": {
+        "antalElever": 280,
+        "larartathet": 9.2,
+        "behorigaLarare": 80.6,
+        "andelBehoriga": 80.636,
+        "harBibliotek": false
+      }
     },
     {
       "kod": "19741742",
@@ -521,7 +654,14 @@
         "SA25",
         "TE25",
         "VF25"
-      ]
+      ],
+      "metrics": {
+        "antalElever": 410,
+        "larartathet": 10.2,
+        "behorigaLarare": 85.4,
+        "andelBehoriga": 85.612,
+        "harBibliotek": false
+      }
     },
     {
       "kod": "29032715",
@@ -547,7 +687,14 @@
         "NA25",
         "SA25",
         "TE25"
-      ]
+      ],
+      "metrics": {
+        "antalElever": 340,
+        "larartathet": 11.2,
+        "behorigaLarare": 75.2,
+        "andelBehoriga": 81.75833333333334,
+        "harBibliotek": false
+      }
     }
   ]
 }
