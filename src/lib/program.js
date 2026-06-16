@@ -22,6 +22,11 @@ const NATIONELLA_PROGRAM = {
   VF: { namn: 'VVS- och fastighetsprogrammet', typ: 'Yrkesprogram' },
   VO: { namn: 'Vård- och omsorgsprogrammet', typ: 'Yrkesprogram' },
   IM: { namn: 'Introduktionsprogram', typ: 'Introduktionsprogram' },
+  // Särskilda/riksrekryterande utbildningar (namn från Skolverkets Syllabus-API).
+  FL: { namn: 'Flygteknikutbildningen', typ: 'Yrkesprogram' },
+  FR: { namn: 'Frisör- och stylistprogrammet', typ: 'Yrkesprogram' },
+  SJ: { namn: 'Sjöfartsutbildningen', typ: 'Yrkesprogram' },
+  IB: { namn: 'International Baccalaureate', typ: 'Högskoleförberedande' },
 };
 
 export function beskrivProgram(programkod) {

@@ -20,11 +20,18 @@ const KOMMUN_NAMN = Object.fromEntries(
   BLEKINGE_KOMMUNER.map((k) => [k.kod, k.namn])
 );
 
-async function api(path) {
+const sov = (ms) => new Promise((r) => setTimeout(r, ms));
+
+async function api(path, forsok = 0) {
   const res = await fetch(`${API_BASE}${path}`, {
     headers: { Accept: ACCEPT },
   });
   if (!res.ok) {
+    // 403/429/5xx är ofta tillfällig rate-limiting – backa av och försök igen.
+    if ([403, 429, 500, 502, 503].includes(res.status) && forsok < 4) {
+      await sov(500 * 2 ** forsok);
+      return api(path, forsok + 1);
+    }
     throw new Error(`Skolverket API ${res.status} för ${path}`);
   }
   return res.json();
@@ -77,18 +84,73 @@ export async function hamtaSkoldetaljer(kod) {
   };
 }
 
-// Hämtar de gymnasieprogram skolan erbjuder, härlett ur gymnasiestatistiken.
-export async function hamtaProgram(kod) {
+// Tolkar Skolverkets talvärden: svenskt decimalkomma ("13,2"), "cirka 30",
+// samt specialkoderna ".." (för få elever) och "." (saknas) → null.
+function tolkaTal(rad) {
+  if (!rad || rad.valueType !== 'EXISTS' || rad.value == null) return null;
+  const m = String(rad.value).replace(',', '.').match(/-?\d+(\.\d+)?/);
+  return m ? parseFloat(m[0]) : null;
+}
+
+// Plockar senaste året med ett faktiskt värde ur en tidsserie.
+function senaste(serie) {
+  const giltiga = (serie ?? [])
+    .filter((r) => r.valueType === 'EXISTS' && r.value != null)
+    .sort((a, b) => String(b.timePeriod).localeCompare(String(a.timePeriod)));
+  return giltiga[0] ?? null;
+}
+
+// Hämtar gymnasiestatistik för en skola och aggregerar till nyckeltal på
+// skolnivå. Lärartäthet och behöriga lärare är redan på skolnivå (samma för
+// alla program); antal elever och andel behöriga är per program och slås ihop.
+export async function hamtaStatistik(kod) {
   let data;
   try {
     data = await api(`/school-units/${kod}/statistics/gy`);
   } catch {
-    return [];
+    return { program: [], metrics: {} };
   }
-  const metrics = data?.body?.programMetrics ?? [];
-  // Slå ihop till unika programkoder (statistiken kan ha rader per inriktning).
-  const koder = new Set(
-    metrics.map((m) => m.programCode).filter(Boolean)
-  );
-  return [...koder].sort();
+  const pm = data?.body?.programMetrics ?? [];
+
+  const program = [...new Set(pm.map((m) => m.programCode).filter(Boolean))].sort();
+
+  // Skolnivå: ta första programblockets värde (identiskt över program).
+  let larartathet = null;
+  let behorigaLarare = null;
+  let harBibliotek = false;
+  for (const m of pm) {
+    larartathet ??= tolkaTal(senaste(m.studentsPerTeacherQuota));
+    behorigaLarare ??= tolkaTal(senaste(m.certifiedTeachersQuota));
+    if (m.hasLibrary) harBibliotek = true;
+  }
+
+  // Per program: summera elever, elevviktat snitt för andel behöriga.
+  let antalElever = 0;
+  let harElevtal = false;
+  let viktSumma = 0;
+  let andelSumma = 0;
+  for (const m of pm) {
+    const elever = tolkaTal(senaste(m.totalNumberOfPupils));
+    if (elever != null) {
+      antalElever += elever;
+      harElevtal = true;
+    }
+    const andel = tolkaTal(senaste(m.ratioOfStudentsEligibleForUndergraduateEducation));
+    if (andel != null) {
+      const vikt = elever ?? 1;
+      viktSumma += vikt;
+      andelSumma += andel * vikt;
+    }
+  }
+
+  return {
+    program,
+    metrics: {
+      antalElever: harElevtal ? antalElever : null,
+      larartathet,
+      behorigaLarare,
+      andelBehoriga: viktSumma > 0 ? andelSumma / viktSumma : null,
+      harBibliotek,
+    },
+  };
 }

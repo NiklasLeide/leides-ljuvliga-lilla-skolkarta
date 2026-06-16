@@ -1,47 +1,17 @@
-import { useEffect, useState } from 'react';
-import { hamtaProgram } from '../lib/skolverket.js';
 import { beskrivProgram } from '../lib/program.js';
 import { skolinspektionenLankar } from '../lib/skolinspektionen.js';
+import { METRICS, formateraVarde } from '../lib/metrics.js';
 import { huvudmanFarg } from './Karta.jsx';
 
-export default function Skolpanel({ skola, onStang }) {
-  const [program, setProgram] = useState(skola.program ?? null);
-  const [programStatus, setProgramStatus] = useState(
-    skola.program ? 'klar' : 'laddar'
-  );
-
-  // Ladda programlistan (om den inte redan finns i snapshoten).
-  useEffect(() => {
-    let avbruten = false;
-    if (skola.program) {
-      setProgram(skola.program);
-      setProgramStatus('klar');
-      return;
-    }
-    setProgram(null);
-    setProgramStatus('laddar');
-    hamtaProgram(skola.kod)
-      .then((p) => {
-        if (avbruten) return;
-        setProgram(p);
-        setProgramStatus('klar');
-      })
-      .catch(() => {
-        if (avbruten) return;
-        setProgramStatus('fel');
-      });
-    return () => {
-      avbruten = true;
-    };
-  }, [skola.kod, skola.program]);
-
+export default function Skolpanel({ skola, onStang, jamfor, onToggleJamfor }) {
   const lankar = skolinspektionenLankar(skola);
-  const utbildningar = (program ?? []).map(beskrivProgram);
+  const utbildningar = (skola.program ?? []).map(beskrivProgram);
+  const ivald = jamfor.includes(skola.kod);
 
   return (
     <aside className="panel">
-      <button className="panel__stang" onClick={onStang} aria-label="Stäng">
-        ✕
+      <button className="panel__stang" onClick={onStang} aria-label="Tillbaka">
+        ←
       </button>
 
       <header className="panel__head">
@@ -71,18 +41,36 @@ export default function Skolpanel({ skola, onStang }) {
         {skola.epost && <a href={`mailto:${skola.epost}`}>E-post</a>}
       </div>
 
+      <button
+        className={`knapp ${ivald ? '' : 'knapp--primar'} panel__jmf`}
+        onClick={() => onToggleJamfor(skola)}
+      >
+        {ivald ? '✓ I jämförelsen' : '+ Lägg till i jämförelse'}
+      </button>
+
+      <section className="panel__sektion">
+        <h3>Nyckeltal</h3>
+        <dl className="nyckeltal">
+          {METRICS.map((m) => (
+            <div key={m.key} className="nyckeltal__rad">
+              <dt>{m.label}</dt>
+              <dd>{formateraVarde(m, m.get(skola))}</dd>
+            </div>
+          ))}
+          <div className="nyckeltal__rad">
+            <dt>Skolbibliotek</dt>
+            <dd>{skola.metrics?.harBibliotek ? 'Ja' : 'Nej'}</dd>
+          </div>
+        </dl>
+      </section>
+
       <section className="panel__sektion">
         <h3>Utbildningar</h3>
-        {programStatus === 'laddar' && <p className="panel__info">Hämtar utbildningar…</p>}
-        {programStatus === 'fel' && (
-          <p className="panel__info">Kunde inte hämta utbildningar just nu.</p>
-        )}
-        {programStatus === 'klar' && utbildningar.length === 0 && (
+        {utbildningar.length === 0 ? (
           <p className="panel__info">
             Inga gymnasieprogram rapporterade för denna skolenhet.
           </p>
-        )}
-        {programStatus === 'klar' && utbildningar.length > 0 && (
+        ) : (
           <ul className="program">
             {utbildningar.map((u) => (
               <li key={u.kod} className="program__rad">
